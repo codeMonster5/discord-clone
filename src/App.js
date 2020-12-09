@@ -41,9 +41,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authUser)
     };
-      fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
-        .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
+      fetch('https://jsonplaceholder.typicode.com/posts', requestOptions);
 
     });
     
