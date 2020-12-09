@@ -41,7 +41,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authUser)
     };
-      fetch('https://jsonplaceholder.typicode.com/posts', requestOptions);
+      fetch('https://localhost:44339/account/authuser', requestOptions);
 
     });
     
