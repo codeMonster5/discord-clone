@@ -22,11 +22,30 @@ function App() {
              email : authUser.email,
              displayName :authUser.displayName
            }))
+
+          
        }
        else{
           dispatch(logout());
        }
-    })
+     
+      authUser.getIdToken(true).then(function(idToken) {
+        console.log(idToken ,"token");
+        // send token to backend for verification
+      }).catch(function(error) {
+        // Handle error
+      });
+      
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(authUser)
+    };
+      fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ postId: data.id }));
+
+    });
     
   }, [dispatch])
 

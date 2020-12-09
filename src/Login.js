@@ -13,9 +13,9 @@ function Login() {
     return (
         <div className="login">
             <div className="login__img" >
-             <img src={profile}></img>
+             {/* <img src={profile}></img> */}
             </div>
-            <h2>Welcome</h2>
+            <h2>Chat Application</h2>
             <Button onClick={signIn}>Sign In</Button>
         </div>
     )
