@@ -38,11 +38,10 @@ function App() {
       
       const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(authUser)
     };
       fetch('https://localhost:44339/account/authuser', requestOptions);
-
     });
     
   }, [dispatch])
